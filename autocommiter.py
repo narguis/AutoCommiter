@@ -7,7 +7,7 @@ from git import Repo
 import tkinter as tk
 
 # Paths to the files that will be gradually uploaded
-path_commits = "./"
+path_commits = "../LeetCode/easy"
 username = "narguis"
 token = ""
 today = datetime.now().strftime("%Y-%m-%d")
@@ -51,9 +51,9 @@ def push_commit(amount, files):
     for i in range(amount):
         repo = Repo(path)
 
-        repo.git.add(path)
-        repo.index.commit(f"Changes made to {file}")
-        repo.remotes.origin.push()
+        # repo.git.add(path)
+        # repo.index.commit(f"Changes made to {file}")
+        # repo.remotes.origin.push()
 
     for file in files:
         message = f"Changes made to {file}"
@@ -73,10 +73,11 @@ def push_commit(amount, files):
     find_files(path_commits)
     
     for i in range(remaining):
-        repo = Repo(path)
-        repo.git.add(path)
-        repo.index.commit(message)
-        repo.remotes.origin.push()
+        # repo = Repo(path)
+        # repo.git.add(path)
+        # repo.index.commit(message)
+        # repo.remotes.origin.push()
+        pass
 
 def popup():
     popup = tk.Tk()
@@ -98,3 +99,18 @@ else:
 
 print(find_files(path_commits))
 
+repo = Repo('../LeetCode/easy')
+files = find_files('../LeetCode/easy')
+file = files[0]
+print(files)
+print('\n')
+print(file)
+print('\n')
+repo.git.add(file)
+repo.index.commit(f"Changes made to {file}")
+repo.remotes.origin.push()
+files = find_files(path_commits)
+file = files[0]
+print(files)
+print('\n')
+print(file)
