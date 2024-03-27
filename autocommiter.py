@@ -9,7 +9,7 @@ import tkinter as tk
 # Paths to the files that will be gradually uploaded
 path_commits = "../LeetCode/easy"
 username = "narguis"
-token = ""
+token = "a"
 today = datetime.now().strftime("%Y-%m-%d")
 
 # If False, you will only commit the difference between your desired commits and your commits today
